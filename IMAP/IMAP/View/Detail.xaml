@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:IMap.ViewModel"
+             mc:Ignorable="d"
+             x:Class="IMAP.Views.Detail"
+             Title="DetailPage">
+    
+    <ContentPage.Resources>
+        <local:MapViewModel x:Key="vm"/>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <maps:Map x:Name="myMap"
+                  Grid.Row="0"
+                  MapType="{Binding MapType,Source={StaticResource vm}}"
+                  IsShowingUser="True"
+                  Grid.RowSpan="2"
+                  />
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"
+                    Text="Улица"
+                    Command="{Binding ChangeTypeStreetCommand, Source={StaticResource vm}}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    Margin="5"/>
+
+                <Button Grid.Column="1"
+                    Text="Спутник"
+                    Command="{Binding ChangeTypeSatteliteCommand, Source={StaticResource vm}}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    Margin="5"/>
+
+                <Button Grid.Column="2"
+                    Text="Гибрид"
+                    Command="{Binding ChangeTypeHybridCommand, Source={StaticResource vm}}"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White"
+                    Margin="5"/>
+
+            </Grid>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
