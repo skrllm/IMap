@@ -26,6 +26,15 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Stateless/5.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Stateless.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Stateless.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -221,6 +230,27 @@
         "lib/netstandard1.0/_._",
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Stateless/5.1.2": {
+      "sha512": "7oKSfePPhu8ApGGU26feHo+osd/jHg/3NFk6XqJVk92yzYaI8aLekLagQKbxvovgtZsYkOWLzd7K10LcNPxfWg==",
+      "type": "package",
+      "path": "stateless/5.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Stateless.dll",
+        "lib/net40/Stateless.xml",
+        "lib/net45/Stateless.dll",
+        "lib/net45/Stateless.xml",
+        "lib/net472/Stateless.dll",
+        "lib/net472/Stateless.xml",
+        "lib/netstandard1.0/Stateless.dll",
+        "lib/netstandard1.0/Stateless.xml",
+        "lib/netstandard2.0/Stateless.dll",
+        "lib/netstandard2.0/Stateless.xml",
+        "stateless.5.1.2.nupkg.sha512",
+        "stateless.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
@@ -673,6 +703,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
+      "Stateless >= 5.1.2",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.7.0.1179",
       "Xamarin.Forms.Maps >= 4.7.0.1179"
@@ -685,11 +716,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP\\IMAP.csproj",
+      "projectUniqueName": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP\\IMAP.csproj",
       "projectName": "IMAP",
-      "projectPath": "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP\\IMAP.csproj",
+      "projectPath": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP\\IMAP.csproj",
       "packagesPath": "C:\\Users\\mikhi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP\\obj\\",
+      "outputPath": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -725,6 +756,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "Stateless": {
+            "target": "Package",
+            "version": "[5.1.2, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",

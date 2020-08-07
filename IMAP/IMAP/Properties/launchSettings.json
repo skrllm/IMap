@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "IMAP": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

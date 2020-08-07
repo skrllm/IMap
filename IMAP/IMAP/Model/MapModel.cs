@@ -12,5 +12,7 @@ namespace IMap.Model
     {
         public Map map { get; set; }
 
+        public string SearchText { get; set; }
+
     }
 }

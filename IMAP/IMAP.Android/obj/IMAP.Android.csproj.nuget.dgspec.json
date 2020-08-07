@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP.Android\\IMAP.Android.csproj": {}
+    "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP.Android\\IMAP.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP.Android\\IMAP.Android.csproj": {
+    "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP.Android\\IMAP.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP.Android\\IMAP.Android.csproj",
+        "projectUniqueName": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP.Android\\IMAP.Android.csproj",
         "projectName": "IMAP.Android",
-        "projectPath": "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP.Android\\IMAP.Android.csproj",
+        "projectPath": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP.Android\\IMAP.Android.csproj",
         "packagesPath": "C:\\Users\\mikhi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP.Android\\obj\\",
+        "outputPath": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP\\IMAP.csproj": {
-                "projectPath": "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP\\IMAP.csproj"
+              "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP\\IMAP.csproj": {
+                "projectPath": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP\\IMAP.csproj"
               }
             }
           }
@@ -54,14 +54,14 @@
         }
       }
     },
-    "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP\\IMAP.csproj": {
+    "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP\\IMAP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP\\IMAP.csproj",
+        "projectUniqueName": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP\\IMAP.csproj",
         "projectName": "IMAP",
-        "projectPath": "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP\\IMAP.csproj",
+        "projectPath": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP\\IMAP.csproj",
         "packagesPath": "C:\\Users\\mikhi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mikhi\\Desktop\\mobile\\IMAP\\IMAP\\IMAP\\obj\\",
+        "outputPath": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -97,6 +97,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Stateless": {
+              "target": "Package",
+              "version": "[5.1.2, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

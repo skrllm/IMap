@@ -18,6 +18,7 @@ namespace IMAP.Views
             MapButton.Clicked += async (sender, e) =>
             {
                 await App.NavigateMasterDetail(new Detail());
+
             };
             AboutButton.Clicked += async  (sender, e) =>
             {

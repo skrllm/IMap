@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="Imap.Packet" android:installLocation="preferExternal">
   <uses-sdk android:minSdkVersion="18" android:targetSdkVersion="28" />
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application android:label="IMAP.Android" android:icon="@drawable/companylogo" android:name="android.app.Application" android:allowBackup="true">
+  <application android:label="IMAP.Android" android:icon="@drawable/companylogo" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyARg8tUcn1U-UTK_YWQTpF5RMoV2PCS4y4" />
     <activity android:configChanges="orientation|screenSize" android:icon="@drawable/applogo" android:label="IMAP" android:theme="@style/MainTheme" android:name="crc6463f6b94aa47aeec2.MainActivity">
       <intent-filter>
@@ -21,6 +22,13 @@
     </provider>
     <receiver android:enabled="true" android:exported="false" android:name="crc643f46942d9dd1fff9.PowerSaveModeBroadcastReceiver" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999999" android:authorities="Imap.Packet.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.Imap.Packet" />
+      </intent-filter>
+    </receiver>
     <activity android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <!-- Needs to be explicitly declared on P+ -->
