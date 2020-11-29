@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Xml;
-using System.Net;
-using System.Globalization;
-using System.Dynamic;
+﻿using IMAP.Model;
+using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
 namespace IMap.Model
@@ -14,5 +10,22 @@ namespace IMap.Model
 
         public string SearchText { get; set; }
 
+        public string ImageTrafficButton { get; set; }
+
+        public MapModel()
+        {
+
+            this.map = new CustomMap {IsShowingUser = true};
+
+            if (map.TrafficEnabled == true)
+            {
+                ImageTrafficButton = "EnabledTraffic.png";
+            }
+            else
+            {
+                ImageTrafficButton = "DisabledTraffic.png";
+            }
+        }
     }
+
 }

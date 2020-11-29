@@ -36,7 +36,7 @@
                             <FormattedString.Spans>
                                 <Span Text="IMAP" FontSize="22" />
                                 <Span Text=" " />
-                                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
+                                <Span Text="3.0" ForegroundColor="{StaticResource LightTextColor}" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -45,10 +45,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="Это приложение написано на C# и использует API карт" />
-                                <Span Text=" " />
-                                <Span Text="GOOGLE" FontAttributes="Bold" />
-                                <Span Text="." />
+                                <Span Text="Приложение для быстрого поиска мест и погоды в любой точке мира" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>

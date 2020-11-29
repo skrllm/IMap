@@ -11,70 +11,71 @@
     
     <ContentPage.Resources>
         <local:MapViewModel x:Key="vm"/>
-        <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
-            <Color x:Key="Accent">#96d1ff</Color>
-            <Color x:Key="LightTextColor">#999999</Color>
-        </ResourceDictionary>
     </ContentPage.Resources>
     
     <ContentPage.Content>
         
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="7*"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
 
             <ContentView Content="{Binding Map, Source={StaticResource vm}}"
                          Grid.Row="0"
-                         Grid.RowSpan="3"/>
-            
+                         Grid.RowSpan="5"/>
+
             <Frame Grid.Row="0"
-                   Margin="5,5,5,0"
+                   Margin="5,30,5,0"
                    CornerRadius="100"
-                   Padding="0">
-                
+                   Padding="0"
+                   VerticalOptions="Start"
+                   HeightRequest="50"
+                   Grid.RowSpan="2">
                 <Grid >
-                  
+
                     <SearchBar Placeholder="Поиск..." 
                                Text="{Binding GeocoderText, Source={StaticResource vm}, UpdateSourceEventName=PropertyChanged}"
                                SearchCommand="{Binding SearchCommand, Source={StaticResource vm}}"/>
-
                 </Grid>
 
             </Frame>
 
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0"
-                    Text="Улица"
-                    Command="{Binding ChangeTypeStreetCommand, Source={StaticResource vm}}"
-                    BackgroundColor="{StaticResource Primary}"
-                    TextColor="White"
-                    Margin="5"/>
+            <ImageButton Source="Layers.png"
+                         Aspect="AspectFit"
+                         BackgroundColor="White"
+                         Grid.Row="1"
+                         VerticalOptions="Start"
+                         HorizontalOptions="End"
+                         Margin="0,0,10,0"
+                         CornerRadius="100"
+                         WidthRequest="40"
+                         HeightRequest="40"
+                         Opacity="0.75"
+                         Command="{Binding ClickTypeMapCommand, Source={StaticResource vm}}">
 
-                <Button Grid.Column="1"         
-                    Text="Спутник"
-                    Command="{Binding ChangeTypeSatteliteCommand, Source={StaticResource vm}}"
-                    BackgroundColor="{StaticResource Primary}"
-                    TextColor="White"
-                    Margin="5"/>
+            </ImageButton>
 
-                <Button Grid.Column="2"
-                    Text="Гибрид"
-                    Command="{Binding ChangeTypeHybridCommand, Source={StaticResource vm}}"
-                    BackgroundColor="{StaticResource Primary}"
-                    TextColor="White"
-                    Margin="5"/>
+                <ImageButton Source="{Binding ImageTrafficButton,Source={StaticResource vm}}"
+                             Aspect="AspectFit"
+                             BackgroundColor="White"
+                             Grid.Row="2"
+                             VerticalOptions="Start"
+                             HorizontalOptions="End"
+                             Margin="0,0,10,0"
+                             CornerRadius="100"
+                             WidthRequest="40"
+                             HeightRequest="40"
+                             Opacity="0.75"
+                             Command="{Binding ClickTrafficCommand, Source={StaticResource vm}}">
+                </ImageButton>
 
-            </Grid>
+
+
 
         </Grid>
     </ContentPage.Content>

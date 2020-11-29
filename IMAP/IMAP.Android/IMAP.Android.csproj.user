@@ -3,6 +3,7 @@
   <PropertyGroup>
     <SelectedDevice>HUAWEI PRA-TL10</SelectedDevice>
     <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
-    <DefaultDevice>pixel_2_oreo_8_0_-_api_26</DefaultDevice>
+    <DefaultDevice>pixel_3a_xl_oreo_8_0_-_api_26</DefaultDevice>
+    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
   </PropertyGroup>
 </Project>

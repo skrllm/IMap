@@ -1,0 +1,9 @@
+IMAP/IMAP/bin
+IMAP/IMAP.Android/bin
+IMAP/IMAP.iOS
+IMAP/IMAP/obj
+IMAP/IMAP.Android/obj
+*.userprefs
+.packages
+
+

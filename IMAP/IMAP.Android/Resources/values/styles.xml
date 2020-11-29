@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
 
+  <style name="Theme.Splash"
+         parent="android:Theme">
+    <item name="android:windowBackground">@drawable/applogo</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+
+
+
   <style name="MainTheme" parent="MainTheme.Base">
   </style>
   <!-- Base theme applied no matter what API -->
   <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+
+
+    <item name="android:windowTranslucentStatus">true</item>
     <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
     <item name="windowNoTitle">true</item>
     <!--We will be using the toolbar so no need to show ActionBar-->

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace IMAP.Views
 {
@@ -16,7 +12,6 @@ namespace IMAP.Views
         {
             InitializeComponent();
 
-            //MasterBehavior = MasterBehavior.Popover;
             this.Master = new Master();
             this.Detail = new NavigationPage(new Detail());
             App.MasterDetail = this;

@@ -23,8 +23,8 @@
 	.section	.rodata.env.str.1,"aMS",%progbits,1
 	.type	.L.env.str.1, %object
 .L.env.str.1:
-	.asciz	"Imap.Packet"
-	.size	.L.env.str.1, 12
+	.asciz	"IMAP.android"
+	.size	.L.env.str.1, 13
 	.section	.data.application_config,"aw",%progbits
 	.type	application_config, %object
 	.p2align	2
@@ -67,23 +67,23 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.3,"aMS",%progbits,1
 	.type	.L.env.str.3, %object
 .L.env.str.3:
-	.asciz	"MONO_GC_PARAMS"
-	.size	.L.env.str.3, 15
+	.asciz	"MONO_DEBUG"
+	.size	.L.env.str.3, 11
 	.section	.rodata.env.str.4,"aMS",%progbits,1
 	.type	.L.env.str.4, %object
 .L.env.str.4:
-	.asciz	"major=marksweep-conc"
-	.size	.L.env.str.4, 21
+	.asciz	"gen-compact-seq-points"
+	.size	.L.env.str.4, 23
 	.section	.rodata.env.str.5,"aMS",%progbits,1
 	.type	.L.env.str.5, %object
 .L.env.str.5:
-	.asciz	"MONO_LOG_LEVEL"
+	.asciz	"MONO_GC_PARAMS"
 	.size	.L.env.str.5, 15
 	.section	.rodata.env.str.6,"aMS",%progbits,1
 	.type	.L.env.str.6, %object
 .L.env.str.6:
-	.asciz	"info"
-	.size	.L.env.str.6, 5
+	.asciz	"major=marksweep-conc"
+	.size	.L.env.str.6, 21
 	.section	.rodata.env.str.7,"aMS",%progbits,1
 	.type	.L.env.str.7, %object
 .L.env.str.7:
@@ -92,7 +92,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",%progbits,1
 	.type	.L.env.str.8, %object
 .L.env.str.8:
-	.asciz	"2e6483c2-f9aa-47e0-8360-5abd4d5278f9"
+	.asciz	"a4829ff0-289e-4182-8afe-9b00f64a96af"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",%progbits,1
 	.type	.L.env.str.9, %object

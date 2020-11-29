@@ -5,6 +5,7 @@ public class MonoPackageManager_Resources {
 		"IMAP.Android.dll",
 		"FormsViewGroup.dll",
 		"IMAP.dll",
+		"Newtonsoft.Json.dll",
 		"Stateless.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
@@ -57,5 +58,5 @@ public class MonoPackageManager_Resources {
 	};
 	public static String[] Dependencies = new String[]{
 	};
-	public static String ApiPackageName = "Mono.Android.Platform.ApiLevel_28";
+	public static String ApiPackageName = null;
 }

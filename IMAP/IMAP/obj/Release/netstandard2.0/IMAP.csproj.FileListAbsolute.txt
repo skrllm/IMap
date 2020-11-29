@@ -22,12 +22,14 @@ C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\IMAP.csprojAsse
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\App.xaml.g.cs
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\View\About.xaml.g.cs
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\View\Detail.xaml.g.cs
+C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\View\EasterEgg.xaml.g.cs
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\View\MainPage.xaml.g.cs
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\View\Master.xaml.g.cs
+C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\View\Weather.xaml.g.cs
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\IMAP.AssemblyInfoInputs.cache
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\IMAP.AssemblyInfo.cs
+C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\IMAP.csproj.CoreCompileInputs.cache
+C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\XamlC.stamp
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\IMAP.dll
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\ref\IMAP.dll
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\IMAP.pdb
-C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\IMAP.csproj.CoreCompileInputs.cache
-C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP\obj\Release\netstandard2.0\XamlC.stamp

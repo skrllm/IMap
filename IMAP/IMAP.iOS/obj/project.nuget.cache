@@ -1,41 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "3odcqMHOOkXBB7zXuQx1PfVi/t8XySX3fzzAbLMAtI6YizpKg40tefEiExB2xfJHaaa++L5RWjhIIPBUpmAUNw==",
+  "dgSpecHash": "QoxFe4HSzJ0QAGBCnU6AiJ6cY57h2aQByj99pY6OShvLcttbeWhaD4d/Amx5FbGgnBLd94edEF7HYtaHj3SOog==",
   "success": true,
   "projectFilePath": "C:\\Users\\mikhi\\Desktop\\IMAP\\IMAP\\IMAP.iOS\\IMAP.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mikhi\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\mikhi\\.nuget\\packages\\stateless\\5.1.2\\stateless.5.1.2.nupkg.sha512",
-    "C:\\Users\\mikhi\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512",
-    "C:\\Users\\mikhi\\.nuget\\packages\\xamarin.forms.maps\\4.7.0.1179\\xamarin.forms.maps.4.7.0.1179.nupkg.sha512"
+    "C:\\Users\\mikhi\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\mikhi\\.nuget\\packages\\xamarin.forms\\4.8.0.1269\\xamarin.forms.4.8.0.1269.nupkg.sha512",
+    "C:\\Users\\mikhi\\.nuget\\packages\\xamarin.forms.maps\\4.8.0.1269\\xamarin.forms.maps.4.8.0.1269.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Essentials с 1.5.3.2 на 1.3.1. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n IMAP.iOS -> IMAP -> Xamarin.Essentials (>= 1.5.3.2) \r\n IMAP.iOS -> Xamarin.Essentials (>= 1.3.1)",
-      "libraryId": "Xamarin.Essentials",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Обнаружено понижение версии пакета Xamarin.Forms с 4.7.0.1179 на 4.5.0.495. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n IMAP.iOS -> IMAP -> Xamarin.Forms (>= 4.7.0.1179) \r\n IMAP.iOS -> Xamarin.Forms (>= 4.5.0.495)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    }
-  ]
+  "logs": []
 }

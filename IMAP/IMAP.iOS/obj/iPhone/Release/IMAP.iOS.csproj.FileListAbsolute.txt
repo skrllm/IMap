@@ -58,6 +58,8 @@ C:\Users\mikhi\Desktop\mobile\IMAP\IMAP\IMAP.iOS\obj\iPhone\Release\XamlC.stamp
 C:\Users\mikhi\Desktop\mobile\IMAP\IMAP\IMAP.iOS\obj\iPhone\Release\IMAP.iOS.csproj.CopyComplete
 C:\Users\mikhi\Desktop\mobile\IMAP\IMAP\IMAP.iOS\obj\iPhone\Release\IMAP.iOS.exe
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP.iOS\bin\iPhone\Release\IMAP.iOS.exe
+C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP.iOS\bin\iPhone\Release\Newtonsoft.Json.dll
+C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP.iOS\bin\iPhone\Release\Stateless.dll
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP.iOS\bin\iPhone\Release\Xamarin.Essentials.dll
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP.iOS\bin\iPhone\Release\Xamarin.Essentials.pdb
 C:\Users\mikhi\Desktop\IMAP\IMAP\IMAP.iOS\bin\iPhone\Release\Xamarin.Forms.Core.dll

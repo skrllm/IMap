@@ -1,8 +1,7 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 using IMAP.Views;
 using System.Threading.Tasks;
+using IMAP.View;
 
 namespace IMAP
 {
@@ -18,11 +17,13 @@ namespace IMAP
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+           // MainPage = new MainPage();
+            MainPage = new WelcomeScreeen();
         }
 
         protected override void OnStart()
         {
+         
         }
 
         protected override void OnSleep()

@@ -132,13 +132,13 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.495" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\IMAP\IMAP.csproj">
-      <Project>{DDDE0F07-FB0E-4438-9C2F-F4BF8E32D132}</Project>
+      <Project>{0185D24F-1754-42FC-AA54-9F645A6BCD6F}</Project>
       <Name>IMAP</Name>
     </ProjectReference>
   </ItemGroup>
