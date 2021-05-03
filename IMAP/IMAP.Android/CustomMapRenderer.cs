@@ -1,10 +1,10 @@
 ﻿using Android.Gms.Maps;
 using IMAP.Droid;
-using Xamarin.Forms.Maps;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps.Android;
+using IMAP.Model;
 
-[assembly: ExportRenderer(typeof(Map), typeof(CustomMapRenderer))]
+[assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
 
 namespace IMAP.Droid
 {
