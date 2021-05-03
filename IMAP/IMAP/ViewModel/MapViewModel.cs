@@ -1,5 +1,4 @@
-﻿using System.Dynamic;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using IMap.Model;
 using IMAP.Model;
 using Xamarin.Forms;
@@ -9,38 +8,36 @@ namespace IMap.ViewModel
 {
     public class MapViewModel : ViewModel
     {
-        MapModel data = new MapModel();
-        GeocoderModel geocoder = new GeocoderModel();
-
+        MapModel data;
+        GeocoderModel geocoder;
         WeatherModel weatherModel;
 
         public MapViewModel()
         {
+            data = new MapModel();
+            geocoder = new GeocoderModel();
+
             ClickTypeMapCommand = new Command(ClickTypeMapMethod, canExecuteMethod);
             ClickTrafficCommand = new Command(ClickTrafficMethod, canExecuteMethod);
-
             SearchCommand = new Command(SearchMethod, canExecuteMethod);
-
 
             data.map.MoveToRegion(new MapSpan(new Position(0, 0), 100, 100)); //Изначальный фокус карты
 
             OnPropertyChange();
         }
 
+        public ICommand ClickTypeMapCommand { get; set; }
+        public ICommand ClickTrafficCommand { get; set; }
+        public ICommand SearchCommand { get; set; }
+
         public Map Map 
         {
-            get
-            {
-                return data.map;
-            } 
+            get => data.map;
         } 
 
         public string GeocoderText
         {
-            get
-            {
-                return data.SearchText;
-            }
+            get => data.SearchText;
             set
             {
                 if (data.SearchText == value) return;
@@ -51,23 +48,20 @@ namespace IMap.ViewModel
 
         public string ImageTrafficButton
         {
-            get
-            {
-                return data.ImageTrafficButton;
-            }
+            get => data.ImageTrafficButton;
         } 
-
-        public ICommand ClickTypeMapCommand { get; set; }
-        public ICommand ClickTrafficCommand { get; set; }
-        public ICommand SearchCommand { get; set; }
 
         private void ClickTrafficMethod(object parameters)
         {
             data.map.TrafficEnabled = !data.map.TrafficEnabled;
             if (data.map.TrafficEnabled)
+            {
                 data.ImageTrafficButton = "EnabledTraffic.png";
+            }
             else
+            {
                 data.ImageTrafficButton = "DisabledTraffic.png";
+            }
             OnPropertyChange();
         }
 
@@ -78,21 +72,13 @@ namespace IMap.ViewModel
             switch (ActionSheet)
             {
                 case "Улица":
-
                     data.map.MapType = MapType.Street;
-
                     break;
-
                 case "Гибрид":
-
                     data.map.MapType = MapType.Hybrid;
-
                     break;
-
                 case "Спутник":
-
                     data.map.MapType = MapType.Satellite;
-
                     break;
             }
 
@@ -102,15 +88,12 @@ namespace IMap.ViewModel
         private async void SearchMethod(object Parameters)
         {
             await geocoder.SearchMethod(data.SearchText); // поиск координат по адресу
-
             await geocoder.ReverseGeocoder(geocoder.SearchPosition); //Поиск описания найденного адреса
-
 
             if (geocoder.SearchPosition != new Position(0, 0))
             {
                 weatherModel = new WeatherModel();
                 await weatherModel.GetWeatherByCoordinates(geocoder.SearchPosition);
-
 
                 var pin = new Pin
                 {
@@ -121,9 +104,7 @@ namespace IMap.ViewModel
                 };
 
                 if (data.map.Pins.Count != 0) data.map.Pins.Clear(); //стирание старой точки
-
                 data.map.Pins.Add(pin);
-
                 data.map.MoveToRegion(new MapSpan(geocoder.SearchPosition, 0.2, 0.2)); //Фокус на найденную точку
             }
             else
