@@ -10,21 +10,15 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Masterpage">
             <ContentPage.Content>
-                <Label Text="Master">
-                    
-                </Label>
+                <Label Text="Master"/>
             </ContentPage.Content>
-        </ContentPage>
-        
+        </ContentPage>        
     </MasterDetailPage.Master>
 
-    <MasterDetailPage.Detail>
-        
+    <MasterDetailPage.Detail>        
         <ContentPage Title="Detail">
             <ContentPage.Content>
-                <Label Text="detail">
-                    
-                </Label>
+                <Label Text="detail"/>
             </ContentPage.Content>
         </ContentPage>
     </MasterDetailPage.Detail>

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using IMAP.Views;
+﻿using IMAP.Views;
 using Xamarin.Forms;
 
 namespace IMAP.View
@@ -21,6 +18,7 @@ namespace IMAP.View
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
             };
+
             AbsoluteLayout.SetLayoutFlags(SplashImage,AbsoluteLayoutFlags.PositionProportional);
             AbsoluteLayout.SetLayoutBounds(SplashImage,new Rectangle(0.5,0.5,AbsoluteLayout.AutoSize,AbsoluteLayout.AutoSize));
 

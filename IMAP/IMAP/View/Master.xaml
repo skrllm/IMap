@@ -6,49 +6,44 @@
              mc:Ignorable="d"
              x:Class="IMAP.Views.Master"
              Title="MasterPage">
-
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#2196F3</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
+    
     <ContentPage.Content>
-
             <StackLayout>
-
-                <Grid >
-                    <Image Source="AppLogo.png"  VerticalOptions="Center" HorizontalOptions="Start"  HeightRequest="100"/>
-                    <Label FontSize="22" Text="IMAP" Margin="10,0,0,0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Grid>
+                    <Image Source="AppLogo.png"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start"
+                           HeightRequest="100"/>
+                    <Label FontSize="22"
+                           Text="IMAP"
+                           Margin="10,0,0,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
                 </Grid>
-
                 <Button x:Name="MapButton"
                         Text="Карта"
                         Margin="5,20,5,0"
                         VerticalOptions="Start"
                         BackgroundColor="{d:StaticResource Primary}"
                         TextColor="White"/>
-
                 <Button x:Name="WeatherButton"
                         Text="Погода"
                         Margin="5,0,5,0"
                         VerticalOptions="Start"
                         BackgroundColor="{d:StaticResource Primary}"
                         TextColor="White"/>
-
                 <Button x:Name="AboutButton"
-                            Text="О нас"
-                            Margin="5,0,5,0"
-                            VerticalOptions="Start"
-                            BackgroundColor="{d:StaticResource Primary}"
-                            TextColor="White"/>
-
-
-
-            <Label Text="Skrill Ltd. 2020" Margin="5" VerticalTextAlignment="End" HorizontalOptions="Center"/>
-            </StackLayout>
-
-            
-
-
+                        Text="О нас"
+                        Margin="5,0,5,0"
+                        VerticalOptions="Start"
+                        BackgroundColor="{d:StaticResource Primary}"
+                        TextColor="White"/>
+                <Label Text="Skrill Ltd. 2020" Margin="5" VerticalTextAlignment="End" HorizontalOptions="Center"/>
+            </StackLayout>         
     </ContentPage.Content>
 </ContentPage>
