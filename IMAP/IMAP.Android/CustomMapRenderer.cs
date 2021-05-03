@@ -1,15 +1,15 @@
 ﻿using Android.Gms.Maps;
 using IMAP.Droid;
-using IMAP.Model;
+using Xamarin.Forms.Maps;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps.Android;
 
-[assembly: ExportRenderer(typeof(CustomMap), typeof(CustomMapRenderer))]
+[assembly: ExportRenderer(typeof(Map), typeof(CustomMapRenderer))]
 
 namespace IMAP.Droid
-
 {
-    class CustomMapRenderer:MapRenderer
+    [System.Obsolete]
+    class CustomMapRenderer : MapRenderer
     {
         protected override void OnMapReady(GoogleMap map)
         {

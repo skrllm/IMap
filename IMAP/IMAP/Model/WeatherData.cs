@@ -41,7 +41,6 @@ namespace IMAP.Model
         public long Cod { get; set; }
     }
 
-
     public class Clouds
     {
         [JsonProperty("all")]

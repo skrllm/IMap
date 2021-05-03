@@ -94,11 +94,11 @@ namespace IMap.ViewModel
         private async void GetWeather(double latitude, double longtitude)
         {
 
-            var url = Constants.ForecastWeatherURL;
+            var url = Constants.forecastWeatherURL;
             url += $"?lat={latitude}";
             url += $"&lon={longtitude}";
             url += $"&mode=xml&units=imperial";
-            url += $"&APPID={Constants.OpenWeatherMapAPIKey}";
+            url += $"&APPID={Constants.openWeatherMapAPIKey}";
 
 
 

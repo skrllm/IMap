@@ -6,22 +6,18 @@ namespace IMAP.Model
 {
     class Converter
     {
-
         public static double FahrenheitToCelsius(double Temperature)
         {
             Temperature = (Temperature - 32) * 5 / 9;
             return Math.Round(Temperature,1);
         }
+
         public static double KelvinToCelsius(double Temperature)
         {
             Temperature = Temperature - 273.15;
             return Math.Round(Temperature, 1);
         }
 
-        public static String FirstCharToUpper(string Text)
-        {
-            return Text[0] + Text.Substring(1);
-        }
         public static string ToUpperFirstLetter(string source)
         {
             if (string.IsNullOrEmpty(source))
