@@ -16,14 +16,11 @@ namespace IMAP
         public App()
         {
             InitializeComponent();
-
-           // MainPage = new MainPage();
             MainPage = new WelcomeScreeen();
         }
 
         protected override void OnStart()
-        {
-         
+        {         
         }
 
         protected override void OnSleep()

@@ -46,7 +46,7 @@
           "dependencies": {
             "Xamarin.AndroidX.AppCompat": {
               "target": "Package",
-              "version": "[1.2.0, )"
+              "version": "[1.2.0.7, )"
             },
             "Xamarin.AndroidX.AppCompat.Resources": {
               "target": "Package",
@@ -54,11 +54,11 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.2, )"
+              "version": "[1.6.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.8.0.1269, )"
+              "version": "[5.0.0.2012, )"
             }
           }
         }
@@ -114,23 +114,23 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[12.0.3, )"
+              "version": "[13.0.1, )"
             },
             "Stateless": {
               "target": "Package",
-              "version": "[5.1.2, )"
+              "version": "[5.11.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.2, )"
+              "version": "[1.6.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.8.0.1269, )"
+              "version": "[5.0.0.2012, )"
             },
             "Xamarin.Forms.Maps": {
               "target": "Package",
-              "version": "[4.8.0.1269, )"
+              "version": "[5.0.0.2012, )"
             }
           },
           "imports": [
