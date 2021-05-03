@@ -8,7 +8,6 @@ namespace IMap.ViewModel
         public AboutViewModel()
         {
             SeeMoreButtonCommand = new Command(SeeMoreButtonMethod, canExecuteMethod);
-
             OnPropertyChange();
         }
 

@@ -7,7 +7,6 @@ namespace IMap.Model
 {
     public class GeocoderModel
     {
-
         public Geocoder geocoder;
         public string info;
         public Position SearchPosition;

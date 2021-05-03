@@ -9,8 +9,6 @@ using System.Windows.Input;
 using System.Xml;
 using IMap.Model;
 using Xamarin.Forms;
-using System.Windows;
-using Xamarin.Forms;
 using System.Linq;
 using Xamarin.Forms.Maps;
 
@@ -18,8 +16,22 @@ namespace IMap.ViewModel
 {
     public class ForecastWeatherViewModel : ViewModel
     {
+        private string geocoderWeatherText;
 
-        public ObservableCollection<Grouping<string, WeatherModel>> dailyWeatherGroups { get; set; }
+        private bool isIndicatorRunning;
+
+        private GeocoderModel geocoder;
+
+        private ObservableCollection<Grouping<string, WeatherModel>> dailyWeatherGroups;
+
+        public ForecastWeatherViewModel()
+        {
+            SearchWeatherCommand = new Command(SearchWeatherMethod, canExecuteMethod);
+            geocoder = new GeocoderModel();
+            dailyWeatherGroups = new ObservableCollection<Grouping<string, WeatherModel>>();
+        }
+
+        public ICommand SearchWeatherCommand { get; set; }
 
         public ObservableCollection<Grouping<string, WeatherModel>> DailyWeatherGroups
         {
@@ -30,7 +42,6 @@ namespace IMap.ViewModel
                 OnPropertyChange();
             }
         }
-        public bool isIndicatorRunning { get; set; }
 
         public bool IsIndicatorRunning
         {
@@ -40,17 +51,8 @@ namespace IMap.ViewModel
                 isIndicatorRunning = value;
                 OnPropertyChange();
             }
+        }    
 
-        }
-
-        GeocoderModel geocoder = new GeocoderModel();
-
-        
-
-        
-
-
-        private string geocoderWeatherText;
         public string GeocoderWeatherText
         {
             get => geocoderWeatherText;
@@ -59,15 +61,6 @@ namespace IMap.ViewModel
                 geocoderWeatherText = value;
                 OnPropertyChange();
             }
-        }
-
-        public ICommand SearchWeatherCommand { get; set; }
-
-        public ForecastWeatherViewModel()
-        {
-
-            SearchWeatherCommand = new Command(SearchWeatherMethod, canExecuteMethod);
-            
         }
 
         private async void SearchWeatherMethod(object parameters)
@@ -90,36 +83,19 @@ namespace IMap.ViewModel
             IsIndicatorRunning = false;
         }
 
-
         private async void GetWeather(double latitude, double longtitude)
         {
-
-            var url = Constants.ForecastWeatherURL;
+            var url = Constants.forecastWeatherURL;
             url += $"?lat={latitude}";
             url += $"&lon={longtitude}";
             url += $"&mode=xml&units=imperial";
-            url += $"&APPID={Constants.OpenWeatherMapAPIKey}";
-
-
+            url += $"&APPID={Constants.openWeatherMapAPIKey}";
 
             // Create a web client.
             using (WebClient client = new WebClient())
             {
                 // Get the response string from the URL.
                 await DisplayForecast(client.DownloadString(url));
-                try
-                {
-                    //  DisplayForecast(client.DownloadString(url));
-                }
-                catch (WebException ex)
-                {
-                    //DisplayError(ex);
-                }
-                catch (Exception ex)
-                {
-
-                    // await Application.Current.MainPage.DisplayAlert("Ошибка", "Ошибка", "Ok");
-                }
             }
         }
 
@@ -128,13 +104,10 @@ namespace IMap.ViewModel
         {
             XmlDocument xml_doc = new XmlDocument();
 
-
             xml_doc.LoadXml(xml);
 
             // Get the city, country, latitude, and longitude.
             XmlNode loc_node = xml_doc.SelectSingleNode("weatherdata/location");
-
-           // DailyWeather.Clear();
            
             var Weathers = new List<WeatherModel>();
 
@@ -149,25 +122,21 @@ namespace IMap.ViewModel
                 XmlNode temp_node = time_node.SelectSingleNode("temperature");
                 string temp = temp_node.Attributes["value"].Value;
 
-
-
                 XmlNode windSpeed_node = time_node.SelectSingleNode("windSpeed"); //Иконка погоды
                 string windSpeed = windSpeed_node.Attributes["mps"].Value;
 
                 XmlNode symbol_node = time_node.SelectSingleNode("symbol"); //Иконка погоды
                 string symbol = symbol_node.Attributes["var"].Value;
 
-
                 Weathers = WeathersConstructor(Weathers, time, temp,symbol,windSpeed,culture);
-
             }
 
             var groups = Weathers.GroupBy(p => p.DayOfWeek).Select(g => new Grouping<string, WeatherModel>(g.Key,g));
+
             // передаем группы в PhoneGroups
             DailyWeatherGroups = new ObservableCollection<Grouping<string, WeatherModel>>(groups);
             
-            OnPropertyChange();
-            
+            OnPropertyChange();            
         }
 
         private List<WeatherModel> WeathersConstructor(List<WeatherModel> Weathers, DateTime time, string temp,string symbol,string windSpeed,CultureInfo culture)
@@ -201,26 +170,15 @@ namespace IMap.ViewModel
                 Weathers.Add(new WeatherModel()
                 {
                     ImagePath = ImagePath,
-
                     Time = TimeOfDay,
-
                     Temperature = Convert.ToString(Converter.FahrenheitToCelsius(Convert.ToDouble(temp, CultureInfo.InvariantCulture))) + " ℃",
-
                     WindSpeed = Convert.ToString(Math.Round(Convert.ToDouble(windSpeed, CultureInfo.InvariantCulture) /2.237,0))+" м/с",
-
-                    // IconURL = "http://openweathermap.org/img/wn/"+symbol+"@2x.png",
-
                     IconURL = "_"+symbol+".png",
-
                     DayOfWeek = Converter.ToUpperFirstLetter(culture.DateTimeFormat.GetDayName(time.DayOfWeek))
                 });
-
             }
-
-
 
             return Weathers;
         }
-
     }
 }

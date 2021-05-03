@@ -8,11 +8,11 @@ namespace IMAP.Model
 {
     public class WeatherRestService
     {
-        HttpClient _client;
+        private HttpClient httpClient;
 
         public WeatherRestService()
         {
-            _client = new HttpClient();
+            httpClient = new HttpClient();
         }
 
         public async Task<WeatherData> GetWeatherData(string query)
@@ -20,7 +20,7 @@ namespace IMAP.Model
             WeatherData weatherData = null;
             try
             {
-                var response = await _client.GetAsync(query);
+                var response = await httpClient.GetAsync(query);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();

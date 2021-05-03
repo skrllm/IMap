@@ -1,5 +1,4 @@
 ﻿using IMAP.Model;
-using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
 namespace IMap.Model
@@ -14,7 +13,6 @@ namespace IMap.Model
 
         public MapModel()
         {
-
             this.map = new CustomMap {IsShowingUser = true};
 
             if (map.TrafficEnabled == true)
@@ -27,5 +25,4 @@ namespace IMap.Model
             }
         }
     }
-
 }

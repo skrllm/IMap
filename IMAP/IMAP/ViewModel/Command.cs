@@ -25,7 +25,6 @@ namespace IMap.ViewModel
 
         public bool CanExecute(object parameter)
         {
-            //  throw new NotImplementedException();
             return true;
         }
 

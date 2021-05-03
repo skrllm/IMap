@@ -4,7 +4,6 @@ namespace IMap.ViewModel
 {
     public class ViewModel : INotifyPropertyChanged
     {
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected bool canExecuteMethod(object parameter)

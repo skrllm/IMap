@@ -10,17 +10,21 @@ namespace IMAP.Views
         public Master()
         {
             int i = 0;
+
             InitializeComponent();
+
             MapButton.Clicked += async (sender, e) =>
             {
                 await App.NavigateMasterDetail(new Detail());
 
             };
+
             AboutButton.Clicked += async  (sender, e) =>
             {
                 await App.NavigateMasterDetail(new About());
 
             };
+
             WeatherButton.Clicked += async (sender, e) =>
             {
                 i++;
@@ -31,8 +35,7 @@ namespace IMAP.Views
                 else
                 {
                     await App.NavigateMasterDetail(new Weather());
-                }
-               
+                }               
             };
         }
     }

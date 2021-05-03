@@ -1,7 +1,6 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-
 namespace IMAP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -10,8 +9,7 @@ namespace IMAP.Views
         public Detail()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
-            
+            NavigationPage.SetHasNavigationBar(this, false);            
         }
     }
 }
