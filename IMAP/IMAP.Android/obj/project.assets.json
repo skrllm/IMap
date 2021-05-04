@@ -2472,11 +2472,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mikhi\\Source\\Repos\\IMap\\IMAP\\IMAP.Android\\IMAP.Android.csproj",
+      "projectUniqueName": "C:\\Users\\mikhi\\source\\repos\\IMap\\IMAP\\IMAP.Android\\IMAP.Android.csproj",
       "projectName": "IMAP.Android",
-      "projectPath": "C:\\Users\\mikhi\\Source\\Repos\\IMap\\IMAP\\IMAP.Android\\IMAP.Android.csproj",
+      "projectPath": "C:\\Users\\mikhi\\source\\repos\\IMap\\IMAP\\IMAP.Android\\IMAP.Android.csproj",
       "packagesPath": "C:\\Users\\mikhi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mikhi\\Source\\Repos\\IMap\\IMAP\\IMAP.Android\\obj\\",
+      "outputPath": "C:\\Users\\mikhi\\source\\repos\\IMap\\IMAP\\IMAP.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2499,8 +2499,8 @@
       "frameworks": {
         "monoandroid10.0": {
           "projectReferences": {
-            "C:\\Users\\mikhi\\Source\\Repos\\IMap\\IMAP\\IMAP\\IMAP.csproj": {
-              "projectPath": "C:\\Users\\mikhi\\Source\\Repos\\IMap\\IMAP\\IMAP\\IMAP.csproj"
+            "C:\\Users\\mikhi\\source\\repos\\IMap\\IMAP\\IMAP\\IMAP.csproj": {
+              "projectPath": "C:\\Users\\mikhi\\source\\repos\\IMap\\IMAP\\IMAP\\IMAP.csproj"
             }
           }
         }

@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:IMap.ViewModel"
              mc:Ignorable="d"
              x:Class="IMAP.Views.Master"
              Title="MasterPage">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#2196F3</Color>
+            <local:MasterPageViewModel x:Key="vm"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -26,23 +28,26 @@
                            VerticalOptions="Center"/>
                 </Grid>
                 <Button x:Name="MapButton"
-                        Text="Карта"
-                        Margin="5,20,5,0"
-                        VerticalOptions="Start"
-                        BackgroundColor="{d:StaticResource Primary}"
-                        TextColor="White"/>
+                            Text="Карта"
+                            Margin="5,20,5,0"
+                            VerticalOptions="Start"
+                            BackgroundColor="{d:StaticResource Primary}"
+                            TextColor="White"
+                            Command="{Binding ClickMapDetailCommand, Source={StaticResource vm}}"/>
                 <Button x:Name="WeatherButton"
-                        Text="Погода"
-                        Margin="5,0,5,0"
-                        VerticalOptions="Start"
-                        BackgroundColor="{d:StaticResource Primary}"
-                        TextColor="White"/>
+                                Text="Погода"
+                                Margin="5,0,5,0"
+                                VerticalOptions="Start"
+                                BackgroundColor="{d:StaticResource Primary}"
+                                TextColor="White"
+                                Command="{Binding ClickWheatherCommand, Source={StaticResource vm}}"/>
                 <Button x:Name="AboutButton"
                         Text="О нас"
                         Margin="5,0,5,0"
                         VerticalOptions="Start"
                         BackgroundColor="{d:StaticResource Primary}"
-                        TextColor="White"/>
+                        TextColor="White"
+                        Command="{Binding ClickAboutCommand, Source={StaticResource vm}}"/>
                 <Label Text="Skrill Ltd. 2020" Margin="5" VerticalTextAlignment="End" HorizontalOptions="Center"/>
             </StackLayout>         
     </ContentPage.Content>

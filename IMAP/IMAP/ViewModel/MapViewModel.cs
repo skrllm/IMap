@@ -22,7 +22,7 @@ namespace IMap.ViewModel
             SearchCommand = new Command(SearchMethod, canExecuteMethod);
 
             data.map.MoveToRegion(new MapSpan(new Position(0, 0), 100, 100)); //Изначальный фокус карты
-
+           
             OnPropertyChange();
         }
 
@@ -114,6 +114,39 @@ namespace IMap.ViewModel
             }
 
             OnPropertyChange();
+        }
+
+        private void DrawArea()
+        {
+            data.map.Pins.Add(DrawPin(new Position(25,25),"Test Area","My area"));
+            data.map.MapElements.Add(DrawCircle(new Position(25,25),250000));
+        }
+
+        private Circle DrawCircle(Position position, int radius)
+        {
+            Circle circle = new Circle
+            {
+                Center = position,             
+                Radius = new Distance(radius),
+                StrokeColor = Color.FromHex("#88FF0000"),
+                StrokeWidth = 8,
+                FillColor = Color.FromHex("#88FFC0CB")
+            };
+
+            return circle;
+        }
+
+        private Pin DrawPin(Position position, string label = null, string adress = null)
+        {
+            var pin = new Pin
+            {
+                Label = label,
+                Address = adress,
+                Type = PinType.Place,
+                Position = position
+            };
+
+            return pin;
         }
     }
 }
