@@ -3,7 +3,7 @@ using IMAP.View;
 using IMAP.Views;
 using System.Windows.Input;
 
-namespace IMap.ViewModel
+namespace IMap.ViewModels
 {
     public class MasterPageViewModel : ViewModel
     {
@@ -11,17 +11,24 @@ namespace IMap.ViewModel
         public MasterPageViewModel()
         {
             ClickMapDetailCommand = new Command(ClickMapDetailMethod, canExecuteMethod);
+            ClickAreasCommand = new Command(ClickAreasMethod, canExecuteMethod);
             ClickWheatherCommand = new Command(ClickWheatherMethod, canExecuteMethod);
             ClickAboutCommand = new Command(ClickAboutMethod, canExecuteMethod);
         }
 
         public ICommand ClickMapDetailCommand { get; set; }
+        public ICommand ClickAreasCommand { get; set; }
         public ICommand ClickWheatherCommand { get; set; }
         public ICommand ClickAboutCommand { get; set; }
 
         private async void ClickMapDetailMethod(object parameters)
         {
             await App.NavigateMasterDetail(new Detail());
+        }
+
+        private async void ClickAreasMethod(object parameters)
+        {
+            await App.NavigateMasterDetail(new Areas());
         }
 
         private async void ClickWheatherMethod(object Parameters)

@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:IMap.ViewModel"
+             xmlns:local="clr-namespace:IMap.ViewModels"
              mc:Ignorable="d"
              x:Class="IMAP.Views.Detail"
              Title="DetailPage">
