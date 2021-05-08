@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:viewModel="clr-namespace:IMAP.ViewModels;assembly=IMAP"
+             x:Class="IMAP.View.AreasPage">
+    <ContentPage.Resources>
+        <viewModel:AreasViewModel x:Key="vm"/>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <ScrollView>
+            <ListView x:Name="areasList" ItemsSource="{Binding AreasCollection,Source={StaticResource vm}}" SelectedItem="{Binding SelectedArea,Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Button Text="{Binding Label}"
+                                            Command="{Binding SelectAreaCommand,Source={StaticResource vm}}"
+                                            CommandParameter="{Binding Get}"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+
+        <Button Text="Обновить" Command="{Binding UpdateAreaCommand, Source={StaticResource vm}}"/>
+        <Button Text="Добавить" Command="{Binding AddAreaCommand, Source={StaticResource vm}}"/>
+    </StackLayout>
+</ContentPage>

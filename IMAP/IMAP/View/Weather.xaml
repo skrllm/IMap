@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="IMAP.View.Weather"
-             xmlns:local="clr-namespace:IMap.ViewModel;assembly=IMAP">
+             xmlns:local="clr-namespace:IMap.ViewModels;assembly=IMAP">
     <ContentPage.BindingContext>
         <local:ForecastWeatherViewModel/>
     </ContentPage.BindingContext>

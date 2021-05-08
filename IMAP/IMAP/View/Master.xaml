@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:IMap.ViewModel"
+             xmlns:local="clr-namespace:IMap.ViewModels"
              mc:Ignorable="d"
              x:Class="IMAP.Views.Master"
              Title="MasterPage">
@@ -28,19 +28,26 @@
                            VerticalOptions="Center"/>
                 </Grid>
                 <Button x:Name="MapButton"
-                            Text="Карта"
-                            Margin="5,20,5,0"
-                            VerticalOptions="Start"
-                            BackgroundColor="{d:StaticResource Primary}"
-                            TextColor="White"
-                            Command="{Binding ClickMapDetailCommand, Source={StaticResource vm}}"/>
+                        Text="Карта"
+                        Margin="5,20,5,0"
+                        VerticalOptions="Start"
+                        BackgroundColor="{d:StaticResource Primary}"
+                        TextColor="White"
+                        Command="{Binding ClickMapDetailCommand, Source={StaticResource vm}}"/>
+                <Button x:Name="AddAreaButton"
+                        Text="Области обработки"
+                        Margin="5,0,5,0"
+                        VerticalOptions="Start"
+                        BackgroundColor="{d:StaticResource Primary}"
+                        TextColor="White"
+                        Command="{Binding ClickAreasCommand, Source={StaticResource vm}}"/>
                 <Button x:Name="WeatherButton"
-                                Text="Погода"
-                                Margin="5,0,5,0"
-                                VerticalOptions="Start"
-                                BackgroundColor="{d:StaticResource Primary}"
-                                TextColor="White"
-                                Command="{Binding ClickWheatherCommand, Source={StaticResource vm}}"/>
+                        Text="Погода"
+                        Margin="5,0,5,0"
+                        VerticalOptions="Start"
+                        BackgroundColor="{d:StaticResource Primary}"
+                        TextColor="White"
+                        Command="{Binding ClickWheatherCommand, Source={StaticResource vm}}"/>
                 <Button x:Name="AboutButton"
                         Text="О нас"
                         Margin="5,0,5,0"
