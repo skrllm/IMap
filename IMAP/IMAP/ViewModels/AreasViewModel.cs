@@ -1,52 +1,82 @@
-﻿using IMAP;
-using IMAP.View;
-using IMAP.Views;
+﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
+using IMAP.Model;
+using Xamarin.Forms;
+using IMAP.View;
+using IMap.ViewModels;
 
-namespace IMap.ViewModels
+namespace IMAP.ViewModels
 {
-    public class AreasPageViewModel : ViewModel
+    public class AreasViewModel : ViewModel
     {
-        private int easterEggCounter = 0;
-        public AreasPageViewModel()
+        private Area selectedArea; //хранение выбранного item из списка
+        private TableDataModel<Area> areasModel; //Модель для работы с бд
+        private ObservableCollection<Area> areasCollection; //коллекция Компаний
+
+        public AreasViewModel()
         {
-            //ClickMapDetailCommand = new Command(ClickMapDetailMethod, canExecuteMethod);
-            //ClickAreasCommand = new Command(ClickAreasMethod, canExecuteMethod);
-            //ClickWheatherCommand = new Command(ClickWheatherMethod, canExecuteMethod);
-            //ClickAboutCommand = new Command(ClickAboutMethod, canExecuteMethod);
+            selectedArea = new Area();
+            areasModel = new TableDataModel<Area>();
+            areasCollection = new ObservableCollection<Area>();
+
+            OnAppearing();
+
+            SelectAreaCommand = new IMap.ViewModels.Command(SelectAreaMethod, canExecuteMethod);
+            AddAreaCommand = new IMap.ViewModels.Command(AddAreaMethod, canExecuteMethod);
+            UpdateAreaCommand = new IMap.ViewModels.Command(UpdateData, canExecuteMethod);
         }
 
-        //public ICommand ClickMapDetailCommand { get; set; }
-        //public ICommand ClickAreasCommand { get; set; }
-        //public ICommand ClickWheatherCommand { get; set; }
-        //public ICommand ClickAboutCommand { get; set; }
+        public ICommand SelectAreaCommand { get; set; }
+        public ICommand AddAreaCommand { get; set; }
+        public ICommand UpdateAreaCommand { get; set; }
 
-        //private async void ClickMapDetailMethod(object parameters)
-        //{
-        //    await App.NavigateMasterDetail(new Detail());
-        //}
+        public Area SelectedArea
+        {
+            get => selectedArea;
+            set
+            {
+                if (value != null)
+                {
+                    selectedArea = value;
+                    OnPropertyChange();
+                }
+            }
+        }
 
-        //private async void ClickAreasMethod(object parameters)
-        //{
-        //    await App.NavigateMasterDetail(new Areas());
-        //}
+        public ObservableCollection<Area> AreasCollection
+        {
+            get => areasCollection;
+        }
 
-        //private async void ClickWheatherMethod(object Parameters)
-        //{
-        //    easterEggCounter++;
-        //    if (easterEggCounter == 8)
-        //    {
-        //        await App.NavigateMasterDetail(new EasterEgg());
-        //    }
-        //    else
-        //    {
-        //        await App.NavigateMasterDetail(new Weather());
-        //    }
-        //}
+        protected async void OnAppearing()
+        {
+            await areasModel.CreateTable();
+            UpdateAreaCommand.Execute(null);    //Обновляем данные
+        }
 
-        //private async void ClickAboutMethod(object Parameters)
-        //{
-        //    await App.NavigateMasterDetail(new About());
-        //}
+        private async void SelectAreaMethod(object parameters)
+        {
+            SelectedArea = (Area)parameters;    //Принимаем параметры с фронта о выбранном сотруднике
+            AreaPage areaPage = new AreaPage(selectedArea); //Передаем данные в форму сотрудника
+
+            await App.NavigateMasterDetail(areaPage);
+        }
+
+        private async void AddAreaMethod(object parameters)
+        {
+            await App.NavigateMasterDetail(new AreaPage());
+        }
+
+        private async void UpdateData(object parameters)
+        {
+            areasCollection.Clear(); //TODO сделать добавление новых данных, а не очистку всей коллекции
+
+            foreach (var item in await areasModel.GetItems())
+            {
+                areasCollection.Add(item);
+            }                
+
+            OnPropertyChange();
+        }
     }
 }

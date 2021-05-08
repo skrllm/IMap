@@ -28,7 +28,7 @@ namespace IMap.ViewModels
 
         private async void ClickAreasMethod(object parameters)
         {
-            await App.NavigateMasterDetail(new Areas());
+            await App.NavigateMasterDetail(new AreasPage());
         }
 
         private async void ClickWheatherMethod(object Parameters)

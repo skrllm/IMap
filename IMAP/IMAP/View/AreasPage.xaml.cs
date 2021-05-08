@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace IMAP.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Areas : ContentPage
+    public partial class AreasPage : ContentPage
     {
-        public Areas()
+        public AreasPage()
         {
             InitializeComponent();
         }

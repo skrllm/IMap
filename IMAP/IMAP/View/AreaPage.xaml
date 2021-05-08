@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:IMAP.ViewModels;assembly=IMAP"
+             x:Class="IMAP.View.AreaPage">
+    <ContentPage.Resources>
+        <viewModel:AreaViewModel x:Key="vm"/>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Label x:Name="IdLabel" Text="{Binding Id, Source={StaticResource vm}, Mode=TwoWay}"/>
+        <Label Text="Заголовок"/>
+        <Entry x:Name="LabelEntry" Text="{Binding Label, Source={StaticResource vm}}"/>
+        <Label Text="Описание"/>
+        <Entry x:Name="DescriptionEntry" Text="{Binding Description, Source={StaticResource vm}}"/>
+        
+        <Label Text="Latitude:"/>
+        <Entry x:Name="LatitudeEntry" Text="{Binding Latitude, Source={StaticResource vm}}"/>
+        <Label Text="Longtitude:"/>
+        <Entry x:Name="LogitudeEntry" Text="{Binding Longitude, Source={StaticResource vm}}"/>
+        <Label Text="Радиус:"/>
+        <Entry x:Name="RadiusEntry" Text="{Binding Radius, Source={StaticResource vm}}"/>
+
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Сохранить" Command="{Binding SaveCommand,Source={StaticResource vm}}" />
+            <Button Text="Удалить" Command="{Binding DeleteCommand,Source={StaticResource vm}}" />
+            <Button Text="Отмена" Command="{Binding CancelCommand,Source={StaticResource vm}}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
