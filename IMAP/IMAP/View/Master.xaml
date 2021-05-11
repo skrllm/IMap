@@ -28,27 +28,34 @@
                            VerticalOptions="Center"/>
                 </Grid>
                 <Button x:Name="MapButton"
-                            Text="Карта"
-                            Margin="5,20,5,0"
-                            VerticalOptions="Start"
-                            BackgroundColor="{d:StaticResource Primary}"
-                            TextColor="White"
-                            Command="{Binding ClickMapDetailCommand, Source={StaticResource vm}}"/>
+                        Text="Карта"
+                        Margin="5,20,5,0"
+                        Visual="Material"
+                        VerticalOptions="Start"
+                        BackgroundColor="{d:StaticResource Primary}"
+                        TextColor="White"
+                        Command="{Binding ClickMapDetailCommand, Source={StaticResource vm}}"/>
                 <Button x:Name="WeatherButton"
-                                Text="Погода"
-                                Margin="5,0,5,0"
-                                VerticalOptions="Start"
-                                BackgroundColor="{d:StaticResource Primary}"
-                                TextColor="White"
-                                Command="{Binding ClickWheatherCommand, Source={StaticResource vm}}"/>
+                        Text="Погода"
+                        Visual="Material"
+                        Margin="5,0,5,0"
+                        VerticalOptions="Start"
+                        BackgroundColor="{d:StaticResource Primary}"
+                        TextColor="White"
+                        Command="{Binding ClickWheatherCommand, Source={StaticResource vm}}"/>
                 <Button x:Name="AboutButton"
                         Text="О нас"
+                        Visual="Material"
                         Margin="5,0,5,0"
                         VerticalOptions="Start"
                         BackgroundColor="{d:StaticResource Primary}"
                         TextColor="White"
                         Command="{Binding ClickAboutCommand, Source={StaticResource vm}}"/>
-                <Label Text="Skrill Ltd. 2020" Margin="5" VerticalTextAlignment="End" HorizontalOptions="Center"/>
+                <Label Text="Skrill Ltd. 2020"
+                       Margin="5"
+                       Visual="Material"
+                       VerticalTextAlignment="End"
+                       HorizontalOptions="Center"/>
             </StackLayout>         
     </ContentPage.Content>
 </ContentPage>

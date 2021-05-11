@@ -75,6 +75,7 @@
                 </Label>
                 <Button Margin="0,10,0,0"
                         Text="Узнать больше"
+                        Visual="Material"
                         Command="{Binding SeeMoreButtonCommand, Source={StaticResource vm}}"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" />

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OUtdoqdYGjrQai1Hf7+/yrAKMbpyj7b/cAxDF/dxh6XgJcH0WExQs6QdjLDcnf3Rl1IHM3DeOE3XwoCJcQA0hA==",
+  "dgSpecHash": "kD5f5aZQ3dOl7xRpELluU5TZJld/QQtG/FVnw548swWhy7p6NvUvFUgUBMOE753KGA8Mh0kcJSL7xdUm2FJGbQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\mikhi\\source\\repos\\IMap\\IMAP\\IMAP.Android\\IMAP.Android.csproj",
   "expectedPackageFiles": [
@@ -56,6 +56,7 @@
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
     "C:\\Users\\mikhi\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2012\\xamarin.forms.maps.5.0.0.2012.nupkg.sha512",
+    "C:\\Users\\mikhi\\.nuget\\packages\\xamarin.forms.visual.material\\5.0.0.2012\\xamarin.forms.visual.material.5.0.0.2012.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.google.android.material\\1.2.1.1\\xamarin.google.android.material.1.2.1.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512",
     "C:\\Users\\mikhi\\.nuget\\packages\\xamarin.googleplayservices.base\\117.1.0\\xamarin.googleplayservices.base.117.1.0.nupkg.sha512",
