@@ -3,6 +3,7 @@ using System.Windows.Input;
 using IMAP.Model;
 using IMap.ViewModels;
 using IMAP.View;
+using System.Text.RegularExpressions;
 
 namespace IMAP.ViewModels
 {
@@ -61,7 +62,7 @@ namespace IMAP.ViewModels
             get => latitude.ToString();
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (CheckingPositionValue(value))
                 {
                     this.latitude = Convert.ToDouble(value);
                     OnPropertyChange();
@@ -74,7 +75,7 @@ namespace IMAP.ViewModels
             get => longitude.ToString();
             set
             {
-                if (!string.IsNullOrEmpty(value))
+                if (CheckingPositionValue(value))
                 {
                     this.longitude = Convert.ToDouble(value);
                     OnPropertyChange();
@@ -93,6 +94,11 @@ namespace IMAP.ViewModels
                     OnPropertyChange();
                 }
             }
+        }
+
+        private bool CheckingPositionValue(string value)
+        {
+            return new Regex(@"\b[0-9]{0,}[,.]?[0-9]{1,}\b").IsMatch(value);
         }
 
         private async void SaveMethod(object parameters) //TODO Проверку на пустые строки

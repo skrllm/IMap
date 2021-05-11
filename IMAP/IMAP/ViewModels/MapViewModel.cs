@@ -1,4 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 using IMap.Model;
 using IMAP.Model;
 using Xamarin.Forms;
@@ -8,27 +10,38 @@ namespace IMap.ViewModels
 {
     public class MapViewModel : ViewModel
     {
-        MapModel data;
-        GeocoderModel geocoder;
-        WeatherModel weatherModel;
+        private MapModel data;
+        private GeocoderModel geocoder;
+        private WeatherModel weatherModel;
+
+        private TableDataModel<Area> areasModel; //Модель для работы с бд
+        private ObservableCollection<Area> areasCollection; //коллекция Областей
 
         public MapViewModel()
         {
             data = new MapModel();
             geocoder = new GeocoderModel();
 
+            areasModel = new TableDataModel<Area>();
+            areasCollection = new ObservableCollection<Area>();
+
             ClickTypeMapCommand = new Command(ClickTypeMapMethod, canExecuteMethod);
             ClickTrafficCommand = new Command(ClickTrafficMethod, canExecuteMethod);
+            UpdateAreaCommand = new IMap.ViewModels.Command(UpdateData, canExecuteMethod);
             SearchCommand = new Command(SearchMethod, canExecuteMethod);
 
             data.map.MoveToRegion(new MapSpan(new Position(0, 0), 100, 100)); //Изначальный фокус карты
-           
+
+            OnAppearing();
+
             OnPropertyChange();
         }
 
         public ICommand ClickTypeMapCommand { get; set; }
         public ICommand ClickTrafficCommand { get; set; }
         public ICommand SearchCommand { get; set; }
+
+        public ICommand UpdateAreaCommand { get; set; }
 
         public Map Map 
         {
@@ -85,6 +98,32 @@ namespace IMap.ViewModels
             OnPropertyChange();
         }
 
+        protected async void OnAppearing()
+        {
+            await areasModel.CreateTable();
+            UpdateAreaCommand.Execute(null);    //Обновляем данные
+        }
+
+        private async void UpdateData(object parameters)
+        {
+            areasCollection.Clear(); //TODO сделать добавление новых данных, а не очистку всей коллекции
+
+            foreach (var item in await areasModel.GetItems())
+            {
+                areasCollection.Add(item);
+            }
+
+            foreach (var item in areasCollection)
+            {
+                try
+                {
+                    DrawArea(item);
+                }catch(Exception ex) { }
+            }
+
+            OnPropertyChange();
+        }
+
         private async void SearchMethod(object Parameters)
         {
             await geocoder.SearchMethod(data.SearchText); // поиск координат по адресу
@@ -116,10 +155,10 @@ namespace IMap.ViewModels
             OnPropertyChange();
         }
 
-        private void DrawArea()
+        private void DrawArea(Area area)
         {
-            data.map.Pins.Add(DrawPin(new Position(25,25),"Test Area","My area"));
-            data.map.MapElements.Add(DrawCircle(new Position(25,25),250000));
+            data.map.Pins.Add(DrawPin(new Position(area.Latitude, area.Longitide), area.Label, area.Description));
+            data.map.MapElements.Add(DrawCircle(new Position(area.Latitude, area.Longitide), area.Radius));
         }
 
         private Circle DrawCircle(Position position, int radius)

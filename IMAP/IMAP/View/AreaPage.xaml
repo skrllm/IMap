@@ -8,7 +8,7 @@
     </ContentPage.Resources>
 
     <StackLayout>
-        <Label x:Name="IdLabel" Text="{Binding Id, Source={StaticResource vm}, Mode=TwoWay}"/>
+        <Label x:Name="IdLabel" Text="{Binding Id, Source={StaticResource vm}, Mode=TwoWay}" IsVisible="false"/>
         <Label Text="Заголовок"/>
         <Entry x:Name="LabelEntry" Text="{Binding Label, Source={StaticResource vm}}"/>
         <Label Text="Описание"/>

@@ -11,7 +11,7 @@ namespace IMAP.ViewModels
     {
         private Area selectedArea; //хранение выбранного item из списка
         private TableDataModel<Area> areasModel; //Модель для работы с бд
-        private ObservableCollection<Area> areasCollection; //коллекция Компаний
+        private ObservableCollection<Area> areasCollection; //коллекция Областей
 
         public AreasViewModel()
         {
