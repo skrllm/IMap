@@ -77,6 +77,9 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>4.8.0.1451</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Visual.Material">
+      <Version>5.0.0.2012</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomMapRenderer.cs" />

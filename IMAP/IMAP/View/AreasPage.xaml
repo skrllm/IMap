@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              xmlns:viewModel="clr-namespace:IMAP.ViewModels;assembly=IMAP"
-             x:Class="IMAP.View.AreasPage">
+             xmlns:viewModel="clr-namespace:IMAP.ViewModels;assembly=IMAP"
+             x:Class="IMAP.View.AreasPage"
+             Visual="Material">
     <ContentPage.Resources>
         <viewModel:AreasViewModel x:Key="vm"/>
     </ContentPage.Resources>
@@ -16,6 +17,11 @@
                             <ViewCell.View>
                                 <StackLayout Orientation="Horizontal" >
                                     <Button Text="{Binding Label}"
+                                            BackgroundColor="WhiteSmoke"
+                                            BorderColor="{StaticResource NavigationPrimary}"
+                                            BorderWidth="1"
+                                            TextColor="{StaticResource NavigationPrimary}"
+                                            Margin="5"
                                             Command="{Binding SelectAreaCommand,Source={StaticResource vm}}"
                                             CommandParameter="{Binding Get}"/>
                                 </StackLayout>
@@ -26,7 +32,16 @@
             </ListView>
         </ScrollView>
 
-        <Button Text="Обновить" Command="{Binding UpdateAreaCommand, Source={StaticResource vm}}"/>
-        <Button Text="Добавить" Command="{Binding AddAreaCommand, Source={StaticResource vm}}"/>
+        <Button Text="Обновить"
+                BackgroundColor="WhiteSmoke"
+                TextColor="{StaticResource NavigationPrimary}"
+                BorderColor="{StaticResource NavigationPrimary}"
+                BorderWidth="1"
+                Margin="5,0,5,5"
+                Command="{Binding UpdateAreaCommand, Source={StaticResource vm}}"/>
+        <Button Text="Добавить"
+                Margin="5,0,5,15"
+                BackgroundColor="{StaticResource NavigationPrimary}"
+                Command="{Binding AddAreaCommand, Source={StaticResource vm}}"/>
     </StackLayout>
 </ContentPage>

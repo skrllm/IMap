@@ -7,25 +7,45 @@
         <viewModel:AreaViewModel x:Key="vm"/>
     </ContentPage.Resources>
 
-    <StackLayout>
-        <Label x:Name="IdLabel" Text="{Binding Id, Source={StaticResource vm}, Mode=TwoWay}" IsVisible="false"/>
+    <StackLayout Margin="5">
+        <Label x:Name="IdLabel"
+               Text="{Binding Id, Source={StaticResource vm}, Mode=TwoWay}"
+               IsVisible="false"/>
         <Label Text="Заголовок"/>
-        <Entry x:Name="LabelEntry" Text="{Binding Label, Source={StaticResource vm}}"/>
+        <Entry x:Name="LabelEntry"
+               Placeholder="Пестициды"
+               Text="{Binding Label, Source={StaticResource vm}}"/>
         <Label Text="Описание"/>
-        <Entry x:Name="DescriptionEntry" Text="{Binding Description, Source={StaticResource vm}}"/>
+        <Entry x:Name="DescriptionEntry"
+               Placeholder="Аскарициды до 24.06.2021"
+               Text="{Binding Description, Source={StaticResource vm}}"/>
         
         <Label Text="Latitude:"/>
-        <Entry x:Name="LatitudeEntry" Text="{Binding Latitude, Source={StaticResource vm}}"/>
+        <Entry x:Name="LatitudeEntry"
+               Placeholder="54.846009"
+               Text="{Binding Latitude, Source={StaticResource vm}}"/>
         <Label Text="Longtitude:"/>
-        <Entry x:Name="LogitudeEntry" Text="{Binding Longitude, Source={StaticResource vm}}"/>
-        <Label Text="Радиус:"/>
-        <Entry x:Name="RadiusEntry" Text="{Binding Radius, Source={StaticResource vm}}"/>
-
-
-        <StackLayout Orientation="Horizontal">
-            <Button Text="Сохранить" Command="{Binding SaveCommand,Source={StaticResource vm}}" />
-            <Button Text="Удалить" Command="{Binding DeleteCommand,Source={StaticResource vm}}" />
-            <Button Text="Отмена" Command="{Binding CancelCommand,Source={StaticResource vm}}" />
+        <Entry x:Name="LogitudeEntry"
+               Placeholder="83.051278"
+               Text="{Binding Longitude, Source={StaticResource vm}}"/>
+        <Label Text="Радиус, м:"/>
+        <Entry x:Name="RadiusEntry"
+               Placeholder="2500"
+               Text="{Binding Radius, Source={StaticResource vm}}"/>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Сохранить"
+                    Visual="Material"
+                    BackgroundColor="{StaticResource NavigationPrimary}"
+                    Command="{Binding SaveCommand,Source={StaticResource vm}}" />
+            <Button Text="Удалить"
+                    Visual="Material"
+                    BackgroundColor="{StaticResource NavigationPrimary}"
+                    Command="{Binding DeleteCommand,Source={StaticResource vm}}" />
+            <Button Text="Отмена"
+                    Visual="Material"
+                    BackgroundColor="{StaticResource NavigationPrimary}"
+                    Command="{Binding CancelCommand,Source={StaticResource vm}}" />
         </StackLayout>
     </StackLayout>
 </ContentPage>
